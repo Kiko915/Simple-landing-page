@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Test one</title>
+</head>
+<body>
+	<div class="showcase">
+		<div class="left">
+			<h1 class="header-txt">
+				<span>Greater</span>
+				<span>Bug</span>
+				<span>Fixes</span>
+			</h1>
+			<p class="sub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, excepturi, laboriosam. Esse provident.</p>
+			<button class="btn">Join Now</button>
+		</div>
+		<div class="right">
+			<img src="media/bugger.svg" alt="Bug fixing women">
+		</div>
+	</div>	
+	<div class="popup">
+		<div class="inner-popup">
+			<p class="popup-txt">Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Ipsum repellat voluptatum, architecto pariatur nisi?</p>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+	<script>
+		gsap.from('.left', {
+			opacity: 0, 
+			duration: 2, 
+			y: -50, 
+			ease: 'power1',
+		});
+
+		gsap.from('img', {
+			opacity: 0, 
+			duration: 2, 
+			y: 50, 
+			delay: 1
+		});
+
+		const buts = document.querySelector('.btn');
+
+		buts.addEventListener('click', function() {
+			TweenLite.to(".popup", 1, {display:'block'});
+		})
+	</script>	
+</body>
+</html>
